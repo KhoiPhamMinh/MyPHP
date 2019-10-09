@@ -19,7 +19,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 ));
 
 // the SQL query
-$sql = "SELECT studentname,course,gender FROM registercourse";
+$sql = "SELECT studentname,course FROM registercourse";
 
 //////////////
 $stmt = $pdo->prepare($sql);
@@ -33,7 +33,7 @@ $resultSet = $stmt->fetchAll();
 <ul>
 	<?php 
 		foreach ($resultSet as $row) {
-			echo "<li>" .$row["studentname"] .'--' .$row["course"] .'--' .$row["gender"]"<li>";
+			echo "<li>" .$row["studentname"] .'--' .$row["course"] ."<li>";
 		}
 	 ?>
 </ul>
